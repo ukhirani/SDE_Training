@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include <cmath>
+#include <functional>
 using namespace std;
 
 double vedic_maths(int x){
@@ -9,24 +10,27 @@ double vedic_maths(int x){
     double add = diff/closest_sqrt;
     return closest_sqrt + add;
 }
-
 int main ()
 {
-        cout<<"Number"<<"\t"<<"Deviation"<<"(in %)"<<endl;
-    for(int i = 1;i<INT_MAX;i++){
+    vector<pair<double,int>> hello;
 
+        cout<<"Number"<<"\t"<<"Deviation"<<"(in %)"<<endl;
+        int count = 0;
+        for(int i = 1;i<1e5;i++){
         double vedic_answer = vedic_maths(i);
         double square_root = sqrt(i);
-
         double deviation = abs(vedic_answer - square_root)/vedic_answer;
         deviation*=100;
-
-        if(deviation>2){
-            cout<<i<<"\t"<<deviation<<"%"<<endl;
+        if(deviation>5){
+            // cout<<i<<"\t"<<deviation<<"%"<<endl;
+            // count++;
+            hello.push_back(make_pair(deviation,i));
         }
-
-
-
     }
+    sort(hello.begin(),hello.end(),greater<pair<double,int>>());
 
+    for(auto hi:hello){
+        cout<<hi.second<<"\t"<<hi.first<<endl;
+    }
+    // cout<<"count : "<<count<<endl;
 }
