@@ -37,7 +37,7 @@ vi mergeHello(vi a,vi b){
     return answer;
 
 }
-vi mergeSort(vi &v){
+vi mergeSort(vi& v){
     int size = v.size();
     if(size==1){
         return v;
@@ -45,7 +45,7 @@ vi mergeSort(vi &v){
 
         int mid = size/2;
         vi first(v.begin(),v.begin()+mid);
-        vi last(v.begin()+mid+1,v.end());
+        vi last(v.begin()+mid,v.end());
 
         return mergeHello(mergeSort(first),mergeSort(last));
     }
