@@ -1,0 +1,40 @@
+
+1s compliment --> flip all the bits
+2s compliment --> take 1s compliment and add 1 to it
+
+AND
+all true = true
+one false = false
+
+OR
+one true = true
+all false = false
+
+XOR
+no of 1s odd == 1
+no of 1s even = 0
+
+
+Shift Operators
+
+right shift Operators
+
+x == 13 >> 1
+this is said as 13 right shifted by 1
+
+1 1 0 1 ==> 13
+after right shift 1
+0 1 1 0 ==> 6
+
+so the answer we basically got was 13/2 = 6 (considering the floor value)
+
+left shift Operators
+
+left shift k = (num) X 2power(k)
+
+
+the computer will always store the negative number as the number's 2s compliment
+
+so if we have ~(-6)
+
+first we will take the 2s compliment of 6 and then do the NOT gate (flip the bits)
