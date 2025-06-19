@@ -46,7 +46,6 @@ vi mergeSort(vi& v){
         int mid = size/2;
         vi first(v.begin(),v.begin()+mid);
         vi last(v.begin()+mid,v.end());
-
         return mergeHello(mergeSort(first),mergeSort(last));
     }
 }

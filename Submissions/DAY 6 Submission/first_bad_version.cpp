@@ -1,9 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Simulate the API
 bool isBadVersion(int version) {
-    int first_bad = 4; // change as needed
+    int first_bad = 4;
     return version >= first_bad;
 }
 
