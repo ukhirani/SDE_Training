@@ -32,7 +32,7 @@ class Stack{
         return answer;
     }
 
-    bool PushStack(Stack stack,int element){
+    bool Pushstack(Stack stack,int element){
         if(stack.top+1==stack.size){
             return false;
         }else{
@@ -45,6 +45,7 @@ class Stack{
 
 int main(){
 Stack* hello = new Stack(6);
+hello->Pushstack(&hello,4);
 cout<<hello->v.size();
 
 }
