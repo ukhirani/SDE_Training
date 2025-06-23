@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <chrono>
 #include <vector>
 using namespace std;
 class Stack{
@@ -9,35 +8,39 @@ class Stack{
     int top;
 
     public:
-    Stack(int size1){
-        int size = size1;
-        int top = -1;
-        vector<int> v(size1);
+        Stack(int size1){
+        size = size1;
+        top = -1;
+        v = vector<int>(size1);
     }
 
     public:
-    int getTop(Stack stack){
-        int answer = stack.v[stack.top];
+    int getTop(){
+        int answer = v[top];
         return answer;
     }
 
-    int popStack(Stack stack){
+    int getSize(){
+        return top+1;
+    }
+
+    int popStack(){
         int answer = INT_MIN;
-        if(stack.top==-1){
+        if(top==-1){
             return answer;
         }else{
-            answer = stack.getTop(stack);
-            stack.top--;
+            answer = getTop();
+            top--;
         }
         return answer;
     }
 
-    bool Pushstack(Stack stack,int element){
-        if(stack.top+1==stack.size){
+    bool Pushstack(int element){
+        if(top+1==size){
             return false;
         }else{
-            stack.top++;
-            stack.v[stack.top] = element;
+            top++;
+            v[top] = element;
         }
         return true;
     }
@@ -45,7 +48,10 @@ class Stack{
 
 int main(){
 Stack* hello = new Stack(6);
-hello->Pushstack(&hello,4);
-cout<<hello->v.size();
+hello->Pushstack(4);
+hello->Pushstack(4);
+hello->popStack();
+
+cout<<hello->getSize();
 
 }
