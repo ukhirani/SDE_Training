@@ -38,3 +38,6 @@ the computer will always store the negative number as the number's 2s compliment
 so if we have ~(-6)
 
 first we will take the 2s compliment of 6 and then do the NOT gate (flip the bits)
+
+00.................001
+11..................11
