@@ -1,17 +1,16 @@
-#include <bits/stdc++.h>
-#include <unordered_map>
+#include <iostream>
 using namespace std;
-int main(){
-    int n,answer;
-    unordered_map<int, int> shooter_map;
-    cout<<"enter the number of shooters : "<<endl;
-    cin>>n;
-    int i = 0;
-    while (n) {
-        i = i%n;
 
+int getShooter(int n) {
+    int p = 1;
+    while (p * 2 <= n) {
+        p *= 2;
     }
+    return 2 * (n - p) + 1;
+}
 
-
-    cout<<answer+1;
+int main() {
+    int n;
+    cin >> n;
+    cout << "survivor: " << getShooter(n) << "\n";
 }
