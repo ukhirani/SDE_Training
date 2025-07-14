@@ -1,21 +1,30 @@
-#include <iostream>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int count = 0;
+    vector<pair<double, int>> deviations;
+    long long powerOfTwo = 2;
     int x = 1;
-    long long val = 2;
-    for (int y = 1; y <= 9; ++y) {
-        int power = pow(10, y);
 
-        while ( (double)power/(double)val>1) {
-            count++;
-            val*=2;
+    for (int y = 1; y <= 10; ++y) {
+        long long powerOfTen = pow(10, y);
+
+        while (powerOfTwo < powerOfTen) {
+            powerOfTwo *= 2;
             x++;
         }
 
-        cout << "10^" << y << " <------>  2^" << x << "\n";
+        double deviation = abs((double)powerOfTen - (double)powerOfTwo);
+        deviation /= powerOfTen;
+
+        deviations.push_back({deviation, y});
     }
-    cout<<count<<" no. of iterations"<<endl;
+
+    sort(deviations.begin(), deviations.end());
+
+    cout << "Power (y)\tDeviation (in %)\n";
+    for (auto& [dev, y] : deviations) {
+        cout << "10^" << y << "\t\t"  << dev << endl;
+    }
+    return 0;
 }
