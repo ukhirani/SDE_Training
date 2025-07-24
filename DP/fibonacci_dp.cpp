@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 #include <unordered_map>
-#include <vector>
 using namespace std;
 int fibonacci(int n) {
   if (n < 2)
