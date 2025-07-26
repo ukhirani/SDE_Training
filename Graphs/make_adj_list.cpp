@@ -52,7 +52,6 @@ mivi adj_list_ud_uw(pivvi graph_unweighted) {
   mivi answer;
   for (int i = 0; i < v; i++) {
     vi element = edges[i];
-
     answer[element[0]].push_back(element[1]);
     if (element[0] == element[1])
       continue;
@@ -120,11 +119,9 @@ vvi weigted_adj_list_to_matrix(mimii weighted_list) {
 }
 mivi unweighted_adj_matrix_to_adj_list(vvb unweighted_adj_matrix) {
   mivi answer;
-  int rows = unweighted_adj_matrix.size();
-  int columns = unweighted_adj_matrix[0].size();
-
+  int rows = unweighted_adj_matrix.size();//no cols required as rows==cols.
   for (int i = 0; i < rows; i++) {
-    for (int j = 0; i < columns; j++) {
+    for (int j = 0; i < rows; j++) {
       if (unweighted_adj_matrix[i][j]) {
         answer[i].push_back(j);
       }
